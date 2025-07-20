@@ -1,0 +1,32 @@
+:host {
+  width: 190px;
+  display: flex;
+  justify-content: end;
+}
+
+.sidebar {
+  width: 50px;
+  background: var(--deep-dark-color);
+  display: flex;
+  justify-content: center;
+}
+
+.main-bar {
+  width: 36px;
+}
+
+.profile-btn {
+  display: inline-block;
+  color: var(--light-75-color);
+  padding-bottom: 14px;
+  &:hover {
+    color: var(--primary-color);
+  }
+  &.active {
+    color: var(--primary-hover-color);
+  }
+}
+
+.logout-btn {
+  margin-top: 650px;
+}

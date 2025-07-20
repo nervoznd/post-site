@@ -1,0 +1,25 @@
+.text-input-container {
+  display: flex;
+  justify-content: left;
+  gap: 60px;
+  padding: 18px;
+}
+
+.input-name {
+  width: 120px;
+  text-align: end;
+}
+
+.textarea-input {
+  width: 700px;
+  min-height: 120px;
+  height: 120px;
+  resize: none;
+  overflow: auto;
+  padding: 10px;
+  outline: 2px solid var(--gray-color);
+  scrollbar-color: var(--light-color) var(--deep-dark-color);
+  &:focus {
+    outline: 2px solid var(--light-color);
+  }
+}

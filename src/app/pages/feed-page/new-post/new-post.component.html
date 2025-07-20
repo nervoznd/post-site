@@ -1,0 +1,30 @@
+<form class="new-post-form mb24" [formGroup]="form">
+  <text-input
+    name="title"
+    placeholder="Title"
+    [formControl]="title"
+    [class.invalid-input]="title.invalid && title.touched"
+  ></text-input>
+  <textarea-input
+    name="content"
+    placeholder="Type..."
+    [formControl]="content"
+    [class.invalid-input]="content.invalid && content.touched"
+  ></textarea-input>
+  <text-input
+    name="tags"
+    placeholder="tag1, tag2..."
+    [formControl]="tags"
+  ></text-input>
+  <div class="btn-section">
+    <button
+      class="btn"
+      (click)="publishPost()"
+      [disabled]="form.invalid"
+    >Publish</button>
+    <button
+      class="btn"
+      (click)="cancel()"
+    >Cancel</button>
+  </div>
+</form>

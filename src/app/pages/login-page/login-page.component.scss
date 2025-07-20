@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.login-body {
+  background: var(--dark-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 4px;
+  width: 1000px;
+  display: grid;
+  grid-gap: 24px;
+}
+
+.btn-section {
+  display: flex;
+  justify-content: end;
+  padding-right: 170px;
+  gap: 24px;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.hide-password-btn {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--light-color);
+
+  &.active {
+    color: var(--primary-color);
+  }
+}

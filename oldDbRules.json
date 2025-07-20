@@ -1,0 +1,46 @@
+{
+  "rules": {
+    "posts": {
+      ".read": true,
+      ".write": "auth != null",
+      "$postId": {
+        ".write": "auth != null && (data.exists() ? data.child('authorId').val() === auth.uid : newData.child('authorId').val() === auth.uid)",
+        ".validate": "newData.hasChildren(['title', 'content', 'authorId', 'timestamp'])"
+      }
+    },
+    "postLikes": {
+      ".read": true,
+      "$postId": {
+        "$userId": {
+          ".write": "auth != null && $userId === auth.uid && (newData.val() === true || newData.val() === null)",
+          ".validate": true
+        }
+      }
+    },
+
+    "userLikes": {
+      ".write": false,
+      "$userId": {
+        ".read": "auth != null && $userId === auth.uid",
+        "$postId": {
+          ".write": "auth != null && $userId === auth.uid && (newData.val() === true || newData.val() === null)",
+          ".validate": true
+        }
+      }
+    },
+    "postLikeCounts": {
+      ".read": true,
+      "$postId": {
+        ".write": false,
+        ".validate": "newData.isNumber()"
+      }
+    },
+    "users": {
+      ".read": true,
+      ".write": "auth != null",
+      "$userId": {
+        ".write": "auth != null && $userId === auth.uid"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.workspace {
+  background: var(--dark-color);
+  width: 1000px;
+  padding-top: 50px;
+  border: 2px solid var(--gray-color);
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dark-color) var(--gray-color);
+}

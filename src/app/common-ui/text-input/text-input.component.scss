@@ -1,0 +1,15 @@
+.text-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 18px;
+}
+
+.input-name {
+  width: 120px;
+  text-align: end;
+}
+
+.text-input {
+  width: 240px;
+}

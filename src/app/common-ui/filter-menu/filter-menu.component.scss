@@ -1,0 +1,32 @@
+:host {
+  width: 190px;
+  margin-top: 50px;
+}
+
+.filter-card-container {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+
+.filter-card {
+  background: var(--deep-dark-color);
+  border-radius: 0 4px 4px 0;
+  padding: 8px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: var(--primary-hover-color);
+}
+
+.filter-input {
+  display: inline-block;
+  width: 90px;
+}
+
+.open-filter-btn {
+  color: var(--light-color);
+  &:hover {
+    color: var(--primary-color);
+  }
+}

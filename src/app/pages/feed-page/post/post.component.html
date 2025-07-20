@@ -1,0 +1,42 @@
+<div class="post">
+  <div class="post-header">
+    <div class="author-card important-text">
+      <svg class="icon24" icon="user"></svg>
+      {{ post.authorUsername }}
+    </div>
+    <div class="post-info">
+      <div class="post-tags">
+        @for (tag of post.tags; track tag) {
+          <div class="tag">{{ tag }}</div>
+        }
+      </div>
+      <div class="post-datetime normal-text">{{ post.timestamp | date:'short' }}</div>
+    </div>
+  </div>
+  <div class="post-body">
+    <div class="post-content">
+      <div class="post-title">{{ post.title }}</div>
+      <div class="normal-text">{{ post.content }}</div>
+    </div>
+  </div>
+  <div class="post-footer">
+    <button class="post-btn normal-text" (click)="toggleComments()">
+      <svg class="icon24" icon="comment"></svg>
+      {{ post.commentCount > 0 ? post.commentCount : null }}
+    </button>
+    <button class="post-btn normal-text" (click)="like()">
+      <svg class="icon24" icon="like"></svg>
+      {{ post.likeCount > 0 ? post.likeCount : null }}
+    </button>
+    <button class="post-btn normal-text" (click)="dislike()">
+      <svg class="icon24" icon="dislike"></svg>
+      {{ post.dislikeCount > 0 ? post.dislikeCount : null }}
+    </button>
+  </div>
+</div>
+@if (isCommentsOpen()) {
+  <app-post-comments
+    [postId]="post.id!"
+    (onCommentAdded)="incrementComment()"
+  ></app-post-comments>
+}

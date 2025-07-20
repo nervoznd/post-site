@@ -1,0 +1,149 @@
+@import 'reset';
+@import 'fonts';
+@import 'margins';
+
+:root {
+
+  // Colors
+
+  --light-color: #D4BE98;
+  --light-75-color: rgba(212, 190, 152, 0.75);
+  --light-50-color: rgba(212, 190, 152, 0.5);
+  --light-25-color: rgba(212, 190, 152, 0.25);
+  --primary-color: #E78A4E;
+  --primary-hover-color: #EA6962;
+
+  --deep-dark-color: #1D2021;
+  --dark-color: #282828;
+  --gray-color: #3C3836;
+
+  --btn-gray-color: #363636;
+  --btn-hover-gray-color: #2c2c2c;
+
+  --shadow-color: rgba(0, 0, 0, 0.44);
+
+  // FWs
+
+  --thin-fw: 400;
+  --medium-fw: 500;
+  --semibold-fw: 700;
+  --bold-fw: 800;
+}
+
+/* Core */
+
+body {
+  background: var(--gray-color);
+}
+
+/* Inputs */
+
+.btn {
+  background: var(--btn-gray-color);
+  color: var(--light-color);
+  padding: 8px 17px;
+  border-radius: 4px;
+  border-top: 2px solid var(--light-25-color);
+  border-bottom: 2px solid var(--shadow-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--medium-fw);
+
+  &:hover {
+    background: var(--btn-hover-gray-color);
+    color: var(--light-75-color);
+    border-top: 2px solid var(--shadow-color);
+    border-bottom: 2px solid var(--light-25-color);
+  }
+
+  &:disabled {
+    background: var(--btn-hover-gray-color);
+    color: var(--light-50-color);
+    border-top: 2px solid var(--shadow-color);
+    border-bottom: 2px solid var(--light-25-color);
+    cursor: default;
+  }
+}
+
+input::placeholder {
+  color: var(--light-25-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--medium-fw);
+  font-size: 16px;
+}
+
+textarea::placeholder {
+  color: var(--light-25-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--medium-fw);
+  font-size: 16px;
+}
+
+.invalid-input {
+  outline: 1px solid var(--primary-hover-color);
+}
+
+/* Sections */
+
+.dark-section {
+  background: var(--deep-dark-color);
+  border-top: 2px solid var(--gray-color);
+  border-bottom: 2px solid var(--gray-color);
+  width: 100%;
+}
+
+/* Text */
+
+.title {
+  text-align: center;
+  color: var(--light-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--thin-fw);
+  font-size: 32px;
+}
+
+.normal-text {
+  color: var(--light-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--medium-fw);
+  font-size: 16px;
+}
+
+.important-text {
+  color: var(--primary-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--medium-fw);
+  font-size: 14px;
+}
+
+
+.tag {
+  display: flex;
+  background: var(--deep-dark-color);
+  border-radius: 4px;
+  padding: 2px 16px;
+  text-align: center;
+  align-items: center;
+  color: var(--light-50-color);
+
+  font-family: 'JetBrains Mono';
+  font-weight: var(--semibold-fw);
+  font-size: 12px;
+}
+
+/* Icons */
+
+.icon24 {
+  height: 24px;
+  width: 24px;
+}
+
+.icon36 {
+  height: 36px;
+  width: 36px;
+}

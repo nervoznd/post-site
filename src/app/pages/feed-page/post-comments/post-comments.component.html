@@ -1,0 +1,36 @@
+<div class="comments-container">
+  <div class="comment-form-container">
+    <div class="comment-form">
+      <input
+        class="comment-input normal-text"
+        type="text"
+        placeholder="Type comment..."
+        [formControl]="newCommentContent"
+      >
+      <button
+        class="send-btn"
+        (click)="publishComment()"
+        [disabled]="newCommentContent.invalid"
+      >
+        <svg class="icon36" icon="send"></svg>
+      </button>
+    </div>
+  </div>
+  <div class="comments-list-container">
+    <div class="comments-list">
+      @if (comments$ | async; as comments) {
+        @for (comment of comments; track comment.timestamp) {
+          <div class="comment">
+            <div class="author-card important-text">
+              <svg class="icon24" icon="user"></svg>
+              {{ comment.authorUsername }}
+            </div>
+            <div class="comment-content normal-text">
+              {{ comment.content }}
+            </div>
+          </div>
+        }
+      } 
+    </div>
+  </div>
+</div>

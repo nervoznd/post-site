@@ -1,0 +1,56 @@
+.comments-container {
+  background: var(--deep-dark-color);
+  padding-bottom: 48px;
+}
+
+.comment-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-form {
+  width: 800px;
+  border-bottom: 2px solid var(--light-color);
+  padding-top: 32px;
+  padding-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-input {
+  width: 700px;
+}
+
+.send-btn {
+  color: var(--light-color);
+  &:hover {
+    color: var(--primary-color);
+  }
+  &:disabled {
+    color: var(--light-25-color);
+  }
+}
+
+.comments-list-container {
+  display: flex;
+  justify-content: center;
+}
+
+.comment {
+  width: 700px;
+  border-bottom: 2px solid var(--light-color);
+  padding-bottom: 18px;
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: 180px 500px;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.author-card {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  color: var(--light-color);
+}

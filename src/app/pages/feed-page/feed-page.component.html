@@ -1,0 +1,23 @@
+@if (isNewPostFormOpen()) {
+  <app-new-post
+    (postAdded)="loadPosts()"
+    (postCanceled)="toggleNewPostForm()"
+  ></app-new-post>
+} @else {
+  <div class="btn-container">
+    <button
+      class="btn new-post-btn"
+      (click)="toggleNewPostForm()"
+    >
+      New Post
+      <svg class="icon24" icon="new-post"></svg>
+    </button>
+  </div>
+}
+@if (posts$ | async; as posts) {
+  @for (post of posts; track post.timestamp) {
+    <app-post
+      [post]="post"
+    ></app-post>
+  }
+}

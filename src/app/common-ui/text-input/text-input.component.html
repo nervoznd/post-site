@@ -1,0 +1,12 @@
+<div class="text-input-container dark-section">
+  <div class="input-name normal-text">{{ name }}:</div>
+  <input
+    class="text-input normal-text"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  >
+</div>

@@ -1,0 +1,34 @@
+<form [formGroup]="form">
+  <div class="filter-card-container">
+    <div class="filter-card">
+      @if(isTagFilterOpen()) {
+        <input
+        type="text"
+        placeholder="tags"
+        class="filter-input"
+        formControlName="tags"
+        >
+      }
+      <svg icon="tag" class="icon24"></svg>
+      <button class="open-filter-btn" (click)="toggleTagFilter()">
+        <svg [icon]="isTagFilterOpen() ? 'left-arrow' : 'right-arrow'" class="icon24"></svg>
+      </button>
+    </div>
+  </div>
+  <div class="filter-card-container">
+    <div class="filter-card">
+      @if(isUserFilterOpen()) {
+        <input
+        type="text"
+        placeholder="user"
+        class="filter-input"
+        formControlName="user"
+        >
+      }
+      <svg icon="user-circle" class="icon24"></svg>
+      <button class="open-filter-btn" (click)="toggleUserFilter()">
+        <svg [icon]="isUserFilterOpen() ? 'left-arrow' : 'right-arrow'" class="icon24"></svg>
+      </button>
+    </div>
+  </div>
+</form>

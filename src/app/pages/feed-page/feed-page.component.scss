@@ -1,0 +1,11 @@
+.btn-container {
+  display: flex;
+  justify-content: end;
+  padding-right: 12px;
+}
+
+.new-post-btn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
